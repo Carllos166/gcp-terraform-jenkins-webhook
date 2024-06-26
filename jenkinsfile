@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git branch: 'main', url: "https://${GIT_TOKEN}@github.com:Carllos166/gcp-terraform-jenkins-webhook.git"
+               git "https://github.com/Carllos166/gcp-terraform-jenkins-webhook.git"
             }
         }
         
