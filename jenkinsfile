@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-key-jsongit add .')
+        GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-key-json')
         GIT_TOKEN = credentials('git-token')
     }
 
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/Carllos166/gcp-terraform-jenkins-webhook.git"
+               git "https://${GIT_TOKEN}@github.com:Carllos166/gcp-terraform-jenkins-webhook.git.git"
             }
         }
         
