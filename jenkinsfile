@@ -13,7 +13,7 @@ pipeline {
                           branches: [[name: '*/main']],  // Especifique a branch correta
                           doGenerateSubmoduleConfigurations: false, 
                           extensions: [], 
-                          userRemoteConfigs: [[url: "https://github.com/Carllos166/gcp-terraform-jenkins-webhook.git", credentialsId: 'git-token']]])
+                          userRemoteConfigs: [[url: "https://github.com/Carllos165/gcp-terraform-jenkins-webhook.git", credentialsId: 'git-token']]])
             }
         }
         stage('Terraform Init') {
