@@ -6,10 +6,10 @@ pipeline {
         GIT_TOKEN = credentials('git-token')
     }
 
-    stages {
+     stages {
         stage('Git Checkout') {
             steps {
-               git "https://github.com/Carllos166/gcp-terraform-jenkins-webhook.git"
+               git "https://${GIT_TOKEN}@github.com/Carllos166/gcp-terraform-jenkins-webhook.git"
             }
         }
         
