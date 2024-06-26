@@ -1,15 +1,25 @@
 pipeline {
     agent any
-	
+    
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-key-json')
-	GIT_TOKEN = credentials('git-token')
     }
-	
+    
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com:Carllos166/gcp-terraform-jenkins-webhook.git"
+                script {
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: '*/main']], // Ajuste a branch conforme necessário
+                        doGenerateSubmoduleConfigurations: false,
+                        extensions: [],
+                        userRemoteConfigs: [[
+                            url: 'https://github.com/Carllos166/gcp-terraform-jenkins-webhook.git',
+                            credentialsId: 'git-token' // Certifique-se de que o ID está correto
+                        ]]
+                    ])
+                }
             }
         }
         
@@ -29,12 +39,12 @@ pipeline {
             }
         }
 
-	    stage('Manual Approval') {
+        stage('Manual Approval') {
             steps {
                 input "Approve?"
             }
         }
-	    
+        
         stage('Terraform Apply') {
             steps {
                 script {
