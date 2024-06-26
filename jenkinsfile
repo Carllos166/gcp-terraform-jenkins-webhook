@@ -6,13 +6,16 @@ pipeline {
         GIT_TOKEN = credentials('git-token')
     }
 
-     stages {
+    stages {
         stage('Git Checkout') {
             steps {
-               git "https://${GIT_TOKEN}@github.com/Carllos166/gcp-terraform-jenkins-webhook.git"
+                checkout([$class: 'GitSCM', 
+                          branches: [[name: '*/main']],  // Especifique a branch correta
+                          doGenerateSubmoduleConfigurations: false, 
+                          extensions: [], 
+                          userRemoteConfigs: [[url: "https://github.com/Carllos166/gcp-terraform-jenkins-webhook.git", credentialsId: 'git-token']]])
             }
         }
-        
         stage('Terraform Init') {
             steps {
                 script {
