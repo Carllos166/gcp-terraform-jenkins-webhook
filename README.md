@@ -2,6 +2,8 @@
 
 Este repositório demonstra uma configuração básica do Terraform e um pipeline do Jenkins para provisionar um bucket do Google Cloud Storage (GCS). Ele serve como um projeto de aprendizado para explorar princípios de infraestrutura como código (IaC) e fluxos de trabalho de integração contínua/entrega contínua (CI/CD).
 
+[Referência](https://www.youtube.com/watch?v=14x4XwEwiDs&ab_channel=TechTrapture)
+
 ## Visão Geral do Projeto
 
 * **Terraform:** Cria um bucket GCS denominado `gcp-devops-bucket-001` no projeto `gcp-devops-427517` com a localização `US` e a prevenção de acesso público forçada.
