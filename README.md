@@ -17,6 +17,15 @@ Este repositório demonstra uma configuração básica do Terraform e um pipelin
 * **Projeto do Google Cloud Platform (GCP):** Crie um projeto GCP e ative as APIs necessárias (por exemplo, Cloud Storage).
 * **Terraform:** Instale o Terraform de acordo com a documentação oficial ([https://www.terraform.io/](https://www.terraform.io/)).
 * **Jenkins:** Configure um servidor Jenkins.
+* **Plugins Jenkins:** Os seguintes plugins do Jenkins são necessários para a funcionalidade deste pipeline:
+   * **Pipeline:** Define a estrutura e sintaxe do pipeline.
+   * **Pipeline: API:** Fornece APIs para interagir com o pipeline durante a execução.
+   * **Pipeline: SCM:** Permite o check-out do código de um sistema de controle de versão (SCM) como o Git.
+   * **Pipeline: Job:** Define um estágio individual dentro do pipeline.
+   * **Pipeline: Groovy:** Possibilita a execução de scripts Groovy dentro do pipeline para tarefas personalizadas.
+   * **Git:** Integração com o Git para check-out do código.
+   * **Github:** Suporte específico para o repositório GitHub (opcional, se aplicável).
+   * **Credentials:** Gerencia credenciais usadas no pipeline, como tokens do Git e credenciais do Google Cloud.
 * **Credenciais do Jenkins:** Configure credenciais para:
     * **git-token:** Acesso ao repositório Git (se estiver usando repositórios privados).
     * **gcp-key-json:** Credenciais da conta de serviço do Google Cloud com permissões suficientes para gerenciar buckets do GCS.
